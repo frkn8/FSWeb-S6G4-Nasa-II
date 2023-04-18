@@ -15,7 +15,7 @@ function App() {
     axios
       .get("https://api.nasa.gov/planetary/apod", {
         params: {
-          api_key: "DEMO_KEY",
+          api_key: "wW4klK2HSiFYDP3utuSnAGbcWTdzaMau7pbCd9pG",
           date: datePicker,
         },
       })
@@ -33,7 +33,10 @@ function App() {
   }, [datePicker]);
 
   return (
-    <div className="App">
+    <div
+      className="App bg--cover"
+      style={apodData && { backgroundImage: `url(${apodData.hdurl})` }}
+    >
       <ApodContainer
         data={apodData}
         dateChange={setDatePicker}
